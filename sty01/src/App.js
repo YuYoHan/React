@@ -1,21 +1,22 @@
-import { userState } from "react";
+import { useState } from "react";
 
 function App() {
-    const [number, setNumber] = userState(1);
-    const [number1, setNumber1] = userState(1);
-
-    const double = () => {
-        const doubledNumber = number * 2;
-        setNumber(doubledNumber);
-        setNumber1(number1 * 2);
-        console.log(doubledNumber);
-    };
+    const [title, setTitle] = useState("");
 
     return (
-        <>
-            <box>{number}</box>
-            <button onClick={double}>submit</button>
-        </>
+        <div className="container">
+            <div className="mb-3">
+                <label className="form-label">Title</label>
+                <input
+                    className="form-control"
+                    value={title}
+                    onChange={(e) => {
+                        console.log(e.target.value);
+                    }}
+                ></input>
+            </div>
+            <button className="btn">Post</button>
+        </div>
     );
 }
 
