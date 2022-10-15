@@ -1,5 +1,7 @@
+import Routing from "./routes/Roting";
+
 function App() {
-    return <div className="App">:)</div>;
+    return <Routing />;
 }
 
 export default App;

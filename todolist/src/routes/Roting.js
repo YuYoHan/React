@@ -27,8 +27,27 @@
         함수형으로 넘어오면서 this.state와 같은 상태관리(라이프 사이클) 함수가
         hook함수라는 것은 변동
 
+        컴포넌트 랜더함수 → function
+        컴포넌트 내부에서쓰는 기능을 구현할 때는 람다식을 쓴다.
 */
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "../pages/Home";
+import LoginPage from "../pages/Login";
+import SignUp from "../pages/Sign-up";
+import TodoPage from "../pages/Todo";
+
 function Routing() {
-    return <div></div>;
+    return (
+        <BrowserRouter>
+            <Routes>
+                {/* <Route path={"/login"} element={<LoginPage/>}/>
+            <Route path={"/sign-up"} element={<컴포넌트/>}/>    */}
+                <Route path={"/login"} element={<LoginPage />} />
+                <Route path={"/sign-up"} element={<SignUp />} />
+                <Route path={"/"} element={<HomePage />} />
+                <Route path={"/todo"} element={<TodoPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 export default Routing;
