@@ -46,6 +46,11 @@ function Routing() {
                 <Route path={"/sign-up"} element={<SignUp />} />
                 <Route path={"/"} element={<HomePage />} />
                 <Route path={"/todo"} element={<TodoPage />} />
+                {/* /todo/:todoId 이렇게하고 주소창에 아무거나쳐도
+                    element해준 컴포넌트가 나온다. 쇼핑몰에서 상품번호을
+                    db에 보내주고 해당하는 상품정보를 받아오는 식으로 사용할 수 있다.
+                    예시 : http://localhost:3000/todo/1234123 */}
+                <Route path={"/todo/:id"} element={<TodoPage />} />
             </Routes>
         </BrowserRouter>
     );

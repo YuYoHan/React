@@ -6,4 +6,8 @@ export const flexCenter = css`
     align-items: center;
 `;
 
-export const Title = css``;
+export const title = css`
+    font-size: 48px;
+    line-height: 16px;
+    font-weight: bold;
+`;
