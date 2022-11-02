@@ -1,7 +1,15 @@
+import { ThemeProvider } from "styled-components";
 import Routing from "./routes/Roting";
+import GlobalStyles from "./styles/global";
+import { theme } from "./styles/theme";
 
 function App() {
-    return <Routing />;
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles /> {/* reset-css 적용 */}
+            <Routing />;
+        </ThemeProvider>
+    );
 }
 
 export default App;

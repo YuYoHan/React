@@ -1,8 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 function HomePage() {
+    const navigate = useNavigate();
+    /*
+        * 클릭 키입력과 같은 이벤트 발생 시 함수명
+        on기능명
+        handle 기능명
+        on 기능명handler
+    */
+    const onPageNavigate = (e) => {
+        console.log(e.target);
+        // navigate("/todo", {replace: true}) 이렇게 해주면
+        // 지워져서 뒤로가기가 안된다.
+        // 보통 이런 실정을 해주는 이유는 로그인 해놓고 시간이 지나면
+        // 로그아웃 되는데 뒤로가기를 없에줘서 돌아가지 못하게 한다.
+        // 보안때문에 사용한다.
+        navigate("/todo");
+    };
+
     return (
         <>
-            <div>메인 페이지</div>
+            <div onClick={onPageNavigate}>메인 페이지</div>
             <Link to="/todo/123">
                 <button>투두 페이지로 이동</button>
             </Link>

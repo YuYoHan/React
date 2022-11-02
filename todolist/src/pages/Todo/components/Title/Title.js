@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     // styled components css기능으로 css 문법을 재사용할 수 있도록(변수화)
     ${flexCenter}
     ${title}
-
+    background-color: ${(props) => props.theme.palette.primary[300]};
     // & : 자기 자신을 말한다(여기서는 div).
     & > P {
         color: red;
