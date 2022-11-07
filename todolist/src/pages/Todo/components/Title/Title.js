@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { flexCenter, title } from "../../../../styles/common";
+import { media } from "../../../../styles/media";
 
 function TodoTitle() {
     return (
@@ -18,6 +19,7 @@ const Wrapper = styled.div`
     ${flexCenter}
     ${title}
     background-color: ${(props) => props.theme.palette.primary[300]};
+    font-size: ${(props) => props.theme.palette.xLage};
     // & : 자기 자신을 말한다(여기서는 div).
     & > P {
         color: red;
@@ -29,5 +31,9 @@ const Wrapper = styled.div`
             border-radius: 50%;
             background-color: aqua;
         }
+    }
+
+    ${media.tablet} {
+        background-color: red;
     }
 `;
