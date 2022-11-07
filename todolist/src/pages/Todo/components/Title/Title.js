@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     ${flexCenter}
     ${title}
     background-color: ${(props) => props.theme.palette.primary[300]};
-    font-size: ${(props) => props.theme.palette.xLage};
+    font-size: ${({ theme }) => theme.fontSize.xLage};
     // & : 자기 자신을 말한다(여기서는 div).
     & > P {
         color: red;
