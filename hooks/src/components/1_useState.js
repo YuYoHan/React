@@ -3,6 +3,7 @@ import { useState } from "react";
 const UseState = () => {
     // let count = 0;
     const [count, setCount] = useState(0);
+    const [name, setName] = useState("트와이스");
     /*
         useState는 변수를 react의 state로 관리하는 훅함수
         state로 관리하고 있는 함수는 일반적인 방법으로 재대입(초기화) x
@@ -23,12 +24,24 @@ const UseState = () => {
         setCount(count - 1);
     };
 
+    const onChangeName = () => {
+        setName("IZ*one");
+    };
+
     return (
-        <div>
-            <button onClick={onAddNumber}>+</button>
-            {count}
-            <button onClick={onRemoveNumber}>-</button>
-        </div>
+        <>
+            <div>
+                <button onClick={onAddNumber}>+</button>
+                {count}
+                <button onClick={onRemoveNumber}>-</button>
+            </div>
+            <div>
+                {name}
+                <br />
+                <button onClick={onChangeName}>Change</button>
+                <br />
+            </div>
+        </>
     );
 };
 export default UseState;
