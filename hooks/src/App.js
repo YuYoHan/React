@@ -1,6 +1,7 @@
 import UseState from "./components/1_useState";
 import UseState2 from "./components/1_useState2";
 import UseRef from "./components/2_useRef";
+import AddState from "./components/addState";
 
 function App() {
     /*  themeProvider → 특정 스타일을 전역 스코프에 지정헤주고
@@ -11,6 +12,7 @@ function App() {
             <UseState />
             <UseState2 />
             <UseRef />
+            <AddState />
         </>
     );
 }
