@@ -7,6 +7,7 @@ import Time from "./components/1_useState3";
 import Effect from "./components/5_useEffect3";
 import Ref from "./components/2_useRef3";
 import Ref4 from "./components/2_useRef4";
+import Ref5 from "./components/2_useRef5";
 
 function App() {
     /*  themeProvider → 특정 스타일을 전역 스코프에 지정헤주고
@@ -23,6 +24,8 @@ function App() {
             <Effect />
             <Ref />
             <Ref4 />
+            <br />
+            <Ref5 />
         </>
     );
 }
