@@ -5,6 +5,7 @@ import UseMemoCallback from "./components/3_useMemo_Callback";
 import AddState from "./components/addState";
 import Time from "./components/1_useState3";
 import Effect from "./components/5_useEffect3";
+import Ref from "./components/2_useRef3";
 
 function App() {
     /*  themeProvider → 특정 스타일을 전역 스코프에 지정헤주고
@@ -19,6 +20,7 @@ function App() {
             <UseMemoCallback />
             <Time />
             <Effect />
+            <Ref />
         </>
     );
 }
