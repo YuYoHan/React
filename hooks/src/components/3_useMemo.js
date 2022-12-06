@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const calculate = (number, number2) => {
     console.log("계산!");
@@ -8,7 +8,11 @@ const calculate = (number, number2) => {
 function Memo() {
     const [number, setNumber] = useState(0);
     const [number2, setNumber2] = useState(0);
-    const sum = calculate(number, number2);
+
+    // const sum = calculate(number, number2);
+    const sum = useMemo(() => {
+        return calculate(number, number2);
+    }, [number, number2]);
 
     return (
         <div>
