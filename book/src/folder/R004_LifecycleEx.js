@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class R004_LifecycleEx extends Comment {
+class R004_LifecycleEx extends Component {
     render(){
         console.log('3. render call');
         return (
