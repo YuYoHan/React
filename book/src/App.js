@@ -1,14 +1,12 @@
 import './App.css';
-import LifecycleEx from "./folder/R007_LifecycleEx";
+import Arrow from './folder/ArrowFunction'
 
 function App() {
     return (
         <div>
             <h1>Start React 200!</h1>
             <p>CSS 적용하기</p>
-            <LifecycleEx
-                prop_value = 'FromApp.js'
-            />
+            <Arrow/>
         </div>
     );
 }

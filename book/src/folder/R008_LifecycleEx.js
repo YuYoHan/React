@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class R007_LifecycleEx extends Component {
+class R008_LifecycleEx extends Component {
     static getDerivedStateFromProps(props, state) {
         console.log('2. getDerivedStateFromProps Call : '  +props.prop_value);
         return{tmp_state:props.prop_value};
@@ -18,6 +18,11 @@ class R007_LifecycleEx extends Component {
     componentDidMount() {
         console.log('4. componentDidMount Call');
         console.log('5. tmp_state : ' + this.state.tmp_state);
+        this.setState({tmp_state2 : true})
+    }
+    // boolean 유형의 데이터를 반환하는데 return 값이 true일 경우 render() 함수를 한번더 호출
+    shouldComponentUpdate(props, state) {
+        return state.tmp_state2;
     }
 
     render() {
@@ -27,4 +32,4 @@ class R007_LifecycleEx extends Component {
         )
     }
 }
-export default R007_LifecycleEx;
+export default R008_LifecycleEx;
