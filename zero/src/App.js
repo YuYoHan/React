@@ -1,9 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Library from "./ex01/Library";
+import UseState from "./pages/components/UseState";
 
 function App() {
-    return <Library />;
+    return (
+        <div>
+            <h1>Welcome my app</h1>
+            <UseState />
+        </div>
+    );
 }
 
 export default App;
