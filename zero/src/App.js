@@ -1,4 +1,5 @@
 import "./App.css";
+import UseRef from "./pages/components/UseRef";
 import UseState from "./pages/components/UseState";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
         <div>
             <h1>Welcome my app</h1>
             <UseState />
+            <UseRef />
         </div>
     );
 }
