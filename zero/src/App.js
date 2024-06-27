@@ -1,9 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Library from "./ex01/Library";
+import UseMemoCallback from "./pages/components/UseMemoCallback";
+import UseRef from "./pages/components/UseRef";
+import UseState from "./pages/components/UseState";
 
 function App() {
-    return <Library />;
+    return (
+        <div>
+            <h1>Welcome my app</h1>
+            <UseState />
+            <UseRef />
+            <UseMemoCallback />
+        </div>
+    );
 }
 
 export default App;
