@@ -1,15 +1,12 @@
 import "./App.css";
-import UseMemoCallback from "./pages/components/UseMemoCallback";
-import UseRef from "./pages/components/UseRef";
-import UseState from "./pages/components/UseState";
+import Header from "./pages/header";
 
 function App() {
     return (
         <div>
-            <h1>Welcome my app</h1>
-            <UseState />
-            <UseRef />
-            <UseMemoCallback />
+            <Header />
+
+            <h1>본문</h1>
         </div>
     );
 }
