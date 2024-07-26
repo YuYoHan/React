@@ -1,3 +1,7 @@
+import React from "react";
+import "../style/Header.css";
+import SearchIcon from "@material-ui/icons/Search";
+
 function Header() {
     return (
         <div className="header">
@@ -7,6 +11,7 @@ function Header() {
             />
             <div className="header_search">
                 <input className="header_searchInput" type="text" />
+                <SearchIcon className="header_searchIcon" />
             </div>
             <div className="header_nav">
                 <div className="header_option">
