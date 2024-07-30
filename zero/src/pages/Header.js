@@ -1,13 +1,13 @@
 import React from "react";
 import "../style/Header.css";
-import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@mui/icons-material/Search";
 
 function Header() {
     return (
         <div className="header">
             <img
                 className="header_logo"
-                src="https://s3-ap-northeast-2.amazonaws.com/stockplus-insight-seoul/articles/pictures/17725/content_Amazon-Logo_1.jpg"
+                src="https://www.aseanexpress.co.kr/data/photos/20240208/art_17087617650755_6626bf.png"
             />
             <div className="header_search">
                 <input className="header_searchInput" type="text" />
@@ -25,6 +25,16 @@ function Header() {
                 <div className="header_option">
                     <span className="header_optionLineOne">반가워요!</span>
                     <span className="header_optionLineTwo">구독과 좋아요</span>
+                </div>
+                <div className="header_option">
+                    <span className="header_optionLineOne"></span>
+                    <span className="header_optionLineTwo"></span>
+                </div>
+                <div className="header_optionBasket">
+                    {/* <ShoppingBasket /> */}
+                    <span className="header_optionLineTwoheader_basketCount">
+                        0
+                    </span>
                 </div>
             </div>
         </div>

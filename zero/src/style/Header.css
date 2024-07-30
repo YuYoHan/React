@@ -65,3 +65,12 @@
     font-weight: 800;
     margin-top: 3px;
 }
+.header_optionBasket {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.header_optionLineTwoheader_basketCount {
+    margin-right: 10px;
+    margin-left: 10px;
+}
