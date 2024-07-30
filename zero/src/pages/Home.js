@@ -1,9 +1,23 @@
 import React from "react";
+import "../style/Home.css";
+import Product from "./Product";
 
 function Home() {
     return (
         <div className="home">
-            <h1>본문입니다!!</h1>
+            <div className="home-container">
+                <img className="home_image" src="/image.png" alt="home_image" />
+                <div className="home_row">
+                    <Product />
+                </div>
+                <div className="home_row">
+                    <Product />
+                    <Product />
+                </div>
+                <div className="home_row">
+                    <Product />
+                </div>
+            </div>
         </div>
     );
 }
