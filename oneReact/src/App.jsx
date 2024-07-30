@@ -1,20 +1,20 @@
 import "./App.css";
-import Footer from "./components/Footer.jsx";
-import Main from "./components/Main";
-import Header from "./components/Header";
-import Button from "./components/Button";
+import { useState } from "react";
 
 function App() {
-    const buttonProps = {
-        text: "메일",
-        color: "red",
-    };
+    const [state, setState] = useState(0);
+    console.log(state);
+
     return (
         <>
-            <Button {...buttonProps} />
-            <Button text={"카페"} />
-            <Button text={"블로그"} />
-            <div>자식요소</div>
+            <h1>{state}</h1>
+            <button
+                onClick={() => {
+                    setState(state + 1);
+                }}
+            >
+                +
+            </button>
         </>
     );
 }
