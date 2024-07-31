@@ -5,40 +5,44 @@ import { useState } from "react";
 // 3. 국적
 // 4. 자기소개
 const Register = () => {
-    const [name, setName] = useState("이름");
-    const onChangeName = (e) => {
-        setName(e.target.value);
-    };
+    const [input, setInput] = useState({
+        name: "",
+        birth: "",
+        country: "",
+    });
 
-    const [birth, setBirth] = useState("");
-    const onChangeBirth = (e) => {
-        setBirth(e.target.value);
-    };
-
-    const [country, setCountry] = useState("");
-    const onChangeCountry = (e) => {
-        setCountry(e.target.value);
-    };
-
-    const [bio, setBio] = useState("");
-    const onChangeBio = (e) => {
-        setBio(e.target.value);
+    const onChange = (e) => {
+        console.log(e.target.name, e.target.value);
+        setInput({
+            ...input,
+            [e.target.name]: e.target.value,
+        });
     };
 
     return (
         <div>
             <div>
                 <input
-                    value={name}
-                    onChange={onChangeName}
+                    name="name"
+                    value={input.name}
+                    onChange={onChange}
                     placeholder={"이름"}
                 />
             </div>
             <div>
-                <input value={birth} onChange={onChangeBirth} type="date" />
+                <input
+                    name="birth"
+                    value={input.birth}
+                    onChange={onChange}
+                    type="date"
+                />
             </div>
             <div>
-                <select onChange={onChangeCountry} value={country}>
+                <select
+                    name="country"
+                    onChange={onChange}
+                    value={input.country}
+                >
                     <option></option>
                     <option value="KOREA">한국</option>
                     <option value="USA">미국</option>
@@ -46,7 +50,7 @@ const Register = () => {
                 </select>
             </div>
             <div>
-                <textarea onChange={onChangeBio} value={bio} />
+                <textarea name="bio" onChange={onChange} value={input.bio} />
             </div>
         </div>
     );
