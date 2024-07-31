@@ -2,19 +2,32 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-    const [state, setState] = useState(0);
-    console.log(state);
+    const [count, setCount] = useState(0);
+    console.log(count);
+    const [light, setLight] = useState("OFF");
 
     return (
         <>
-            <h1>{state}</h1>
-            <button
-                onClick={() => {
-                    setState(state + 1);
-                }}
-            >
-                +
-            </button>
+            <div>
+                <h1>{light}</h1>
+                <button
+                    onClick={() => {
+                        setLight(light === "ON" ? "OFF" : "ON");
+                    }}
+                >
+                    {light === "ON" ? "끄기" : "켜기"}
+                </button>
+            </div>
+            <div>
+                <h1>{count}</h1>
+                <button
+                    onClick={() => {
+                        setCount(count + 1);
+                    }}
+                >
+                    +
+                </button>
+            </div>
         </>
     );
 }

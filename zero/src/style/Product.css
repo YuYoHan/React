@@ -34,3 +34,11 @@
     margin-top: 10px;
     border-color: #8768bf #a5a5f3 #61dafb;
 }
+.product_price {
+    margin-top: 10px;
+}
+
+.product_info {
+    height: 100px;
+    margin-bottom: 15px;
+}

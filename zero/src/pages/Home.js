@@ -8,7 +8,13 @@ function Home() {
             <div className="home-container">
                 <img className="home_image" src="/image.png" alt="home_image" />
                 <div className="home_row">
-                    <Product />
+                    <Product
+                        id="2323"
+                        title="제품1"
+                        price={3000}
+                        image="https://www.itworld.co.kr/files/itworld/ITW_202311_01/space-back-macbook-pro-open.jpg"
+                        rating={5}
+                    />
                 </div>
                 <div className="home_row">
                     <Product />
