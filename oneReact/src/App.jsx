@@ -1,14 +1,10 @@
 import "./App.css";
-import { useState } from "react";
-// 사용하려는 파일에서
-import Bulb from "./components/Bulb";
-import Counter from "./components/Counter";
+import Register from "./components/Register";
 
 function App() {
     return (
         <>
-            <Bulb />
-            <Counter />
+            <Register />
         </>
     );
 }
