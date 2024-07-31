@@ -9,5 +9,8 @@
   [정리 URL](https://github.com/YuYoHan/memo/tree/main/zero)
 3. 
    
-  
+## 블로그
+[velog](https://velog.io/@zxzz45/series/%EB%A6%AC%EC%95%A1%ED%8A%B8) <br/>
+[노션](https://www.notion.so/3f1fb67b4f1e420f9f678f726f89edb2)
+ 
 
