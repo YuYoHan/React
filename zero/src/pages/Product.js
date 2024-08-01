@@ -20,7 +20,7 @@ function Product({ id, title, image, price, rating }) {
                             .map(() => (
                                 <p>★</p>
                             ))
-                    }
+                    };
                 </div>
             </div>
             <img src={image} alt="img" id="img1" />
