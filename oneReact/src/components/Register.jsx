@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 // 간단한 회원가입 폼
 // 1. 이름
 // 2. 생년월일
@@ -11,7 +11,12 @@ const Register = () => {
         country: "",
     });
 
+    /** 이렇게 초기값을 설정할 수 있다. */
+    const countRef = useRef(0);
+
     const onChange = (e) => {
+        countRef.current++;
+        console.log(countRef.current);
         console.log(e.target.name, e.target.value);
         setInput({
             ...input,
