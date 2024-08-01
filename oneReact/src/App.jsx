@@ -1,12 +1,13 @@
 import "./App.css";
 import Register from "./components/Register";
+import HooksEaxm from "./components/HooksExam";
 
 function App() {
-    return (
-        <>
-            <Register />
-        </>
-    );
+  return (
+    <>
+      <HooksEaxm />
+    </>
+  );
 }
 
 export default App;
