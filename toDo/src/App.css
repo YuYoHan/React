@@ -1,0 +1,8 @@
+.App {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* gap은 디스플레이가 flex로 된거에만 가능하며 요소별 10px 벌려주는 것이다.*/
+    gap: 10px;
+}
