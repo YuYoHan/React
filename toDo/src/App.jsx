@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 import List from "./components/List";
 import Editor from "./components/Editor";
@@ -27,11 +27,14 @@ const mockData = [
 ];
 function App() {
     const [todos, setTodos] = useState(mockData);
+    // 3으로 설정한 이유는 위에 마지막 id가 2이므로
+    // 곂치지 않게 3으로 설정
+    const idRef = useRef(3);
 
     // Editor에서 받은 content로 새로운 내용을 만든다.
     const onCreate = (content) => {
         const newTodo = {
-            id: 0,
+            id: idRef.current++,
             isDone: false,
             constent: content,
             date: new Date().getTime(),
