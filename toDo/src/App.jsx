@@ -28,10 +28,22 @@ const mockData = [
 function App() {
     const [todos, setTodos] = useState(mockData);
 
+    // Editor에서 받은 content로 새로운 내용을 만든다.
+    const onCreate = (content) => {
+        const newTodo = {
+            id: 0,
+            isDone: false,
+            constent: content,
+            date: new Date().getTime(),
+        };
+        // 새로운 내용을 상위에 올리고 그 뒤에 기존에 있던 내용들을 넣어준다.
+        setTodos([newTodo, ...todos]);
+    };
+
     return (
         <div className="App">
             <Header />
-            <Editor />
+            <Editor onCreate={onCreate} />
             <List />
         </div>
     );
