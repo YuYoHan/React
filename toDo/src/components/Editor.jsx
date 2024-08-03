@@ -13,6 +13,7 @@ const Editor = ({ onCreate }) => {
     // onKeyDown은 사용자가 입력하는 이벤트를 알 수 있는데
     // 어떤 키를 눌렀는지는 keyCode로 알 수 있다.
     const onKeydown = (e) => {
+        // 13번은 엔터다.
         if (e.keyCode === 13) {
             onSubmit();
         }
