@@ -69,8 +69,12 @@
     display: flex;
     align-items: center;
     color: white;
+    height: 37px;
 }
 .header_optionLineTwoheader_basketCount {
     margin-right: 10px;
     margin-left: 10px;
+}
+.check_img {
+    height: 20px;
 }
