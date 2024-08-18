@@ -33,7 +33,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
             doneCount,
             notDoneCount,
         };
-    }, []);
+    }, [todos]);
 
     // const { totalCount, doneCount, notDoneCount } = getAnalyedData();
 
