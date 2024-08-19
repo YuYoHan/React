@@ -1,4 +1,4 @@
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef, useReducer, useCallback } from "react";
 import "./App.css";
 import List from "./components/List";
 import Editor from "./components/Editor";
@@ -67,12 +67,13 @@ function App() {
     });
   };
 
-  const onDelete = (targetId) => {
+  // useCallback에 의해서 마운트 됐을 때만 리렌더링 된다.
+  const onDelete = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
       targetId: targetId,
     });
-  };
+  }, []);
 
   return (
     <div className="App">
