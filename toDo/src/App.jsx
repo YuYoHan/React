@@ -1,4 +1,10 @@
-import { useState, useRef, useReducer, useCallback } from "react";
+import {
+  useState,
+  useRef,
+  useReducer,
+  useCallback,
+  createContext,
+} from "react";
 import "./App.css";
 import List from "./components/List";
 import Editor from "./components/Editor";
@@ -41,14 +47,16 @@ function reducer(state, action) {
   }
 }
 
+const TodoContext = createContext();
+console.log(TodoContext);
+
 function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   // 3으로 설정한 이유는 위에 마지막 id가 2이므로
   // 곂치지 않게 3으로 설정
   const idRef = useRef(3);
 
-  // Editor에서 받은 content로 새로운 내용을 만든다.
-  const onCreate = (content) => {
+  const onCreate = useCallback((content) => {
     dispatch({
       type: "CREATE",
       data: {
@@ -58,14 +66,14 @@ function App() {
         date: new Date().getTime(),
       },
     });
-  };
+  }, []);
 
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback((targetId) => {
     dispatch({
       type: "UPDATE",
       targetId: targetId,
     });
-  };
+  }, []);
 
   // useCallback에 의해서 마운트 됐을 때만 리렌더링 된다.
   const onDelete = useCallback((targetId) => {
