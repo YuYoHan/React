@@ -1,7 +1,7 @@
-import React from "react";
+import styles from "@pages/index/styles/index.module.scss";
 
 function index() {
-    return <div></div>;
+    return <div className={styles.page}></div>;
 }
 
 export default index;

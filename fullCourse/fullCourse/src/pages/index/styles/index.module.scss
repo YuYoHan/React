@@ -1,0 +1,13 @@
+$HEADER-HEIGHT: 50px;
+$FOOTER-HEIGHT: 50px;
+$NAVIGATION-HEIGHT: 50px;
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100vh;
+}
