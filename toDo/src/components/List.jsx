@@ -1,8 +1,10 @@
 import "./List.css";
 import TodoItem from "./TodoItem";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useContext } from "react";
+import { TodoContext } from "../App";
 
-const List = ({ todos, onUpdate, onDelete }) => {
+const List = () => {
+    const { todos } = useContext(TodoContext);
     const [search, setSearch] = useState("");
 
     const onChangeSearch = (e) => {
@@ -54,14 +56,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
                 {filteredTodos.map((todo) => {
                     // TodoItem에 todo에 담긴 모든 데이터를 보내준다.
                     // 리스트로 보낼 때는 키 값을 설정해야 한다.
-                    return (
-                        <TodoItem
-                            key={todo.id}
-                            {...todo}
-                            onUpdate={onUpdate}
-                            onDelete={onDelete}
-                        />
-                    );
+                    return <TodoItem key={todo.id} {...todo} />;
                 })}
             </div>
         </div>

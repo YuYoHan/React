@@ -1,7 +1,10 @@
 import "./Editor.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { TodoContext } from "../App";
 
-const Editor = ({ onCreate }) => {
+const Editor = () => {
+    // 받아온 것을 구조분해할당으로 사용해서 onCreate만 사용
+    const { onCreate } = useContext(TodoContext);
     const [content, setContent] = useState("");
     const contentRef = useRef();
     // content 내용이 변경되면 onChange로 인해서
