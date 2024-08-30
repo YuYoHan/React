@@ -5,10 +5,14 @@
 1. 인프런 : 한입 크기로 잘라먹는 리액트 <br/>
    [코드 URL](https://plaid-argument-614.notion.site/21b94221b0fe42b0a92d04e2c35981bf?pvs=4) <br/>
    [실습2 코드 URL](https://github.com/YuYoHan/React/tree/main/toDo)
-2. 유튜브 : 2024 리액트 풀 코스
+2. 유튜브 : 2024 리액트 풀 코스 <br/>
    [코드 URL](https://github.com/YuYoHan/React/tree/main/zero)
-3. 유튜브 : 배달의 민족 클론 코딩
-4. 학원 수업
+3. 유튜브 : 배달의 민족 클론 코딩 <br/>
+   [코드 URL]()
+4. 책 : 코드로 배우는 리액트 <br />
+   [코드 URL]()
+5. 책 : 쇼핑몰 리액트 <br/>
+   [코드 URL]()
 
    
 ## 블로그
