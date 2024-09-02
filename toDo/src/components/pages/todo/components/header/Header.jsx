@@ -1,13 +1,13 @@
-import "./Header.css";
+import "./styles/Header.css";
 import { memo } from "react";
 
 const Header = () => {
-  return (
-    <div className="Header">
-      <h3>오늘은 </h3>
-      <h1>{new Date().toDateString()}</h1>
-    </div>
-  );
+    return (
+        <div className="Header">
+            <h3>오늘은 </h3>
+            <h1>{new Date().toDateString()}</h1>
+        </div>
+    );
 };
 // 최적화하기 위한 동작
 // 이렇게 처리하는 이유는 헤더가 불필요하게 리렌더링하기 때문에
