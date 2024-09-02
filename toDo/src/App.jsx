@@ -1,5 +1,4 @@
 import Routing from "./routes/Routing";
-import GlobalStyles from "./global";
 import { theme } from "./theme";
 import { ThemeProvider } from "styled-components";
 

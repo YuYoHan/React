@@ -24,12 +24,12 @@ function HomePage() {
     return (
         <>
             <div onClick={onPageNavigate}>메인 페이지</div>
-            <Link to="todo/123">
+            <Link to="../todo/index.jsx">
                 <button>투두 페이지로 이동</button>
             </Link>
-            <a href="/todo/123">
+            {/* <a href="/todo/123">
                 <button>투두로 이동</button>
-            </a>
+            </a> */}
         </>
         /*
             react에서 페이지 링크를 이동시키기 위해서는 어떻게 해야할까?
