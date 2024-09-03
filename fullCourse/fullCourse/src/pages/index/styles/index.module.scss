@@ -1,6 +1,4 @@
-$HEADER-HEIGHT: 50px;
-$FOOTER-HEIGHT: 50px;
-$NAVIGATION-HEIGHT: 50px;
+@import url('./index.module.variable.scss');
 
 .page {
     display: flex;
@@ -10,4 +8,55 @@ $NAVIGATION-HEIGHT: 50px;
 
     width: 100%;
     height: 100vh;
+
+    &_contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 100%;
+        height: calc(100% - $HEADER-HEIGHT - $NAVIGATION-HEIGHT - $FOOTER-HEIGHT);
+    
+        &_introBox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 40%;
+            background-image: url();
+            background-size: cover;
+            background-position: 100% 15%;
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+
+                &_title {
+                    margin-bottom: 4px;
+                    color: $color-white-000; // CSS COLOR CODE 변수화 작업
+                    font-size: 3rem;
+                    font-weight: 700;
+                }
+
+                &_desc {
+                    color: $color-white-000;
+                    margin-bottom: 32px;
+                }
+
+                &_imageBox {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 60%;
+                    flex-wrap: wrap;
+
+                    padding: 16px 60px;
+                    gap: 16px;
+                    overflow-y: scroll;
+                }
+            }
+        }
+    }
 }
