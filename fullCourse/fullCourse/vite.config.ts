@@ -4,27 +4,24 @@ import { fileURLToPath, URL } from "url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
-    resolve: {
-        // 기호 자체가 의미하는 것들을 세팅
-        alias: {
-            "@": fileURLToPath(new URL("./src", import.meta.url)),
-            "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
-            "@components": fileURLToPath(
-                new URL("./src/components", import.meta.url)
-            ),
-            "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
-            "@types": fileURLToPath(new URL("./src/types", import.meta.url)),
-            "@recoil": fileURLToPath(new URL("./src/recoil", import.meta.url)),
-            "@apis": fileURLToPath(new URL("./src/apis", import.meta.url)),
-        },
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
+      "@components": fileURLToPath(new URL("./src/components", import.meta.url)),
+      "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
+      "@types": fileURLToPath(new URL("./src/types", import.meta.url)),
+      "@recoil": fileURLToPath(new URL("./src/recoil", import.meta.url)),
+      "@apis": fileURLToPath(new URL("./src/apis", import.meta.url)),
     },
-    // SCSS 전역 사용
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "./src/assets/styles/main.scss`,
-            },
-        },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // SCSS 전역 파일 import시 세미콜론 추가
+        additionalData: `@import "./src/assets/styles/main.scss";`,
+      },
     },
+  },
 });
