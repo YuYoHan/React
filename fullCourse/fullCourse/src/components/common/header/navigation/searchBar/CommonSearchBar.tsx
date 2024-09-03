@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { searchState } from "@/recoil/atoms/searchState";
 import { pageState } from "@/recoil/atoms/pageState";
+import searchIcon from "../../../../../assets/icons/icon-search.svg";
 
 function CommonSearchBar() {
   const [, setSearch] = useRecoilState(searchState);
@@ -49,11 +50,7 @@ function CommonSearchBar() {
           onChange={onChange}
           onKeyDown={handleKeyDown}
         />
-        <img
-          src="../../../../../assets/icons/icon-search.svg"
-          alt=""
-          onClick={onSearch}
-        />
+        <img src={searchIcon} alt="" onClick={onSearch} />
       </div>
     </div>
   );
