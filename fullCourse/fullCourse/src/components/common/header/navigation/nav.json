@@ -1,0 +1,23 @@
+[
+     {
+      "index": 0,
+      "path": "/edit",
+      "label": "보도/편집 전용",
+      "searchValue": "edit",
+      "isActive": false
+    },
+    {
+      "index": 1,
+      "path": "/following",
+      "label": "팔로잉",
+       "searchValue": "following",
+      "isActive": false
+    },
+    {
+      "index": 2,
+      "path": "/photoPlus",
+      "label": "Unsplash Photo+",
+       "searchValue": "photo",
+      "isActive": false
+    }
+]
