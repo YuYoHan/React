@@ -28,7 +28,7 @@ function Index() {
       <CommonHeader />
       <main className={styles.page__contents}>
         {data.map((item: CardDTO) => {
-          return <Card prop={item} key={item.id} />;
+          return <Card data={item} key={item.id} />;
         })}
       </main>
     </div>
