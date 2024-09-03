@@ -1,5 +1,6 @@
 import styles from "../index/styles/index.module.scss";
 import CommonHeader from "@/components/common/header/CommonHeader";
+import CommonSearchBar from "@components/common/header/navigation/searchBar/CommonSearchBar";
 
 function index() {
   return (
@@ -7,6 +8,7 @@ function index() {
       {/* 공통 헤더 UI 부분 */}
       <CommonHeader />
       {/* 공통 네비게이션 UI 부분 */}
+
       <div className={styles.page_contents}>
         <div className={styles.page_contents_introBox}>
           <div className={styles.wrapper}>
@@ -21,6 +23,7 @@ function index() {
         <div className={styles.page_contents_imageBox}></div>
       </div>
       {/* 공통 푸터 UI 부분 */}
+      <CommonSearchBar />
     </div>
   );
 }
