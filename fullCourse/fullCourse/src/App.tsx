@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 // 페이지 컴포넌트
 import MainPage from "@pages/index/index";
-import BookmarkPage from "@pages/bookmark/index";
+import BookmarkPage from "@/pages/bookmark/index";
 
 function App() {
   return (

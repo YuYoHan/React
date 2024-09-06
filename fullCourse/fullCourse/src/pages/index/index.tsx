@@ -2,7 +2,7 @@ import CommonHeader from "@/components/common/header/CommonHeader";
 import CommonSearchBar from "@/components/common/header/navigation/searchBar/CommonSearchBar";
 import CommonNav from "@/components/common/header/navigation/common/CommonNav";
 import CommonFooter from "@/components/common/footer/CommonFooter";
-import Card from "../bookmark/components/Card";
+import Card from "../bookmark/components/Card";
 import { useMemo, useState } from "react";
 import { useRecoilValueLoadable } from "recoil";
 import { imageData } from "@/recoil/selectors/imageSelector";
