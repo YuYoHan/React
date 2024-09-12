@@ -1,0 +1,30 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 좌우 균형을 맞춤 */
+
+  padding: 20px 0px;
+  border-bottom: 1px solid rgb(246, 246, 246);
+}
+
+.Header > div {
+  display: flex;
+  align-items: center; /* 자식 요소가 수직 가운데 정렬 */
+}
+
+.Header .header_center {
+  flex-grow: 1; /* 가운데 영역을 확장해서 중간 정렬이 쉽게 되도록 설정 */
+  display: flex; /* 내부에서 중앙 정렬을 하기 위해 flex로 설정 */
+  justify-content: center; /* 텍스트를 중앙에 배치 */
+  font-size: 25px;
+}
+
+.Header .header_left {
+  width: 25%;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+.Header .header_right {
+  width: 25%;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+}
