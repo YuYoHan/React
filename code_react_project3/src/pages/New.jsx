@@ -11,6 +11,9 @@ const New = () => {
     const nav = useNavigate();
     const onSubmit = (input) => {
         onCreate(input.createdDate.getTime(), input.emotionId, input.content);
+        // 새로운 글을 작성할 때 메인 페이지로 이동하면서
+        // replace : true로 뒤로가기 방지
+        nav("/", { replace: true });
     };
 
     return (
