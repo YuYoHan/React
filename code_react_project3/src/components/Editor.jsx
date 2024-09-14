@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { emotionList } from "../util/constants";
 import { getStringDate } from "../util/getStringDate";
 
+// eslint-disable-next-line react/prop-types
 const Editor = ({ initData, onSubmit }) => {
     const nav = useNavigate();
 
@@ -40,7 +41,6 @@ const Editor = ({ initData, onSubmit }) => {
     const onSubmitButton = () => {
         onSubmit(input);
     };
-    git;
     return (
         <div className="Editor">
             <section className="date_section">
