@@ -58,6 +58,7 @@ const Editor = () => {
             [name]: name === "createdDate" ? new Date(value) : value,
         }));
     };
+
     const emotionId = 2;
     return (
         <div className="Editor">
