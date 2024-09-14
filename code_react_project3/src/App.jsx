@@ -8,104 +8,102 @@ import Edit from "./pages/Edit";
 import NotFound from "./pages/NotFound";
 
 const mockData = [
-  {
-    id: 1,
-    createdDate: new Date("2024-09-13").getTime(),
-    emotionId: 1,
-    content: "1번 일기 내용",
-  },
-  {
-    id: 2,
-    createdDate: new Date("2024-09-12").getTime(),
-    emotionId: 2,
-    content: "2번 일기 내용",
-  },
-  {
-    id: 3,
-    createdDate: new Date("2024-08-11").getTime(),
-    emotionId: 3,
-    content: "3번 일기 내용",
-  },
+    {
+        id: 1,
+        createdDate: new Date("2024-09-13").getTime(),
+        emotionId: 1,
+        content: "1번 일기 내용",
+    },
+    {
+        id: 2,
+        createdDate: new Date("2024-09-12").getTime(),
+        emotionId: 2,
+        content: "2번 일기 내용",
+    },
+    {
+        id: 3,
+        createdDate: new Date("2024-08-11").getTime(),
+        emotionId: 3,
+        content: "3번 일기 내용",
+    },
 ];
 
 function reducer(state, action) {
-  switch (action.type) {
-    case "CREATE":
-      console.log("CREATE={}", [action.data, ...state]);
-      return [action.data, ...state];
-    case "UPDATE":
-      console.log(
-        "UPDATE={}",
-        state.map((item) =>
-          (item.id === action.id) === action.data.id ? action.data : item
-        )
-      );
-      return state.map((item) =>
-        (item.id === action.id) === action.data.id ? action.data : item
-      );
-    case "DELETE":
-      return state.filter((item) => String(item.id) !== String(action.id));
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case "CREATE":
+            console.log("CREATE={}", [action.data, ...state]);
+            return [action.data, ...state];
+        case "UPDATE":
+            return state.map((item) =>
+                item.id === action.data.id ? action.data : item
+            );
+        case "DELETE":
+            return state.filter(
+                (item) => String(item.id) !== String(action.id)
+            );
+        default:
+            return state;
+    }
 }
 
 export const DiaryStateContext = createContext();
 export const DiaryDispatchContext = createContext();
 
 function App() {
-  const [data, dispatch] = useReducer(reducer, mockData);
-  const idRef = useRef(3);
+    const [data, dispatch] = useReducer(reducer, mockData);
+    const idRef = useRef(3);
 
-  // 새로운 일기 추가
-  const onCreate = (createdDate, emotionId, content) => {
-    dispatch({
-      type: "CREATE",
-      data: {
-        id: idRef.current++,
-        createdDate,
-        emotionId,
-        content,
-      },
-    });
-  };
+    // 새로운 일기 추가
+    const onCreate = (createdDate, emotionId, content) => {
+        dispatch({
+            type: "CREATE",
+            data: {
+                id: idRef.current++,
+                createdDate,
+                emotionId,
+                content,
+            },
+        });
+    };
 
-  // 기존 일기 수정
-  const onUpdate = (id, createdDate, emotionId, content) => {
-    dispatch({
-      type: "UPDATE",
-      data: {
-        id,
-        createdDate,
-        emotionId,
-        content,
-      },
-    });
-  };
+    // 기존 일기 수정
+    const onUpdate = (id, createdDate, emotionId, content) => {
+        dispatch({
+            type: "UPDATE",
+            data: {
+                id,
+                createdDate,
+                emotionId,
+                content,
+            },
+        });
+    };
 
-  // 기존 일기 삭제
-  const onDelete = (id) => {
-    dispatch({
-      type: "DELETE",
-      id,
-    });
-  };
+    // 기존 일기 삭제
+    const onDelete = (id) => {
+        dispatch({
+            type: "DELETE",
+            id,
+        });
+    };
 
-  return (
-    <>
-      <DiaryStateContext.Provider value={data}>
-        <DiaryDispatchContext.Provider value={{ onCreate, onUpdate, onDelete }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/new" element={<New />} />
-            <Route path="/diary/:id" element={<Diary />} />
-            <Route path="/edit/:id" element={<Edit />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </DiaryDispatchContext.Provider>
-      </DiaryStateContext.Provider>
-    </>
-  );
+    return (
+        <>
+            <DiaryStateContext.Provider value={data}>
+                <DiaryDispatchContext.Provider
+                    value={{ onCreate, onUpdate, onDelete }}
+                >
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/new" element={<New />} />
+                        <Route path="/diary/:id" element={<Diary />} />
+                        <Route path="/edit/:id" element={<Edit />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </DiaryDispatchContext.Provider>
+            </DiaryStateContext.Provider>
+        </>
+    );
 }
 
 export default App;

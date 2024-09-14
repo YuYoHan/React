@@ -1,7 +1,7 @@
 import "./Editor.css";
 import EmotionItem from "./EmotionItem";
 import Button from "./Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const emotionList = [
@@ -42,8 +42,18 @@ const getStringDate = (targetDate) => {
     return `${year}-${month}-${date}`;
 };
 
-const Editor = ({ onSubmit }) => {
+const Editor = ({ initData, onSubmit }) => {
     const nav = useNavigate();
+
+    useEffect(() => {
+        if (initData) {
+            console.log("Setting initData:", initData);
+            setInput({
+                ...initData,
+                createdDate: new Date(Number(initData.createdDate)), // 날짜 형식 변환
+            });
+        }
+    }, [initData]);
 
     const [input, setInput] = useState({
         createdDate: new Date(),
@@ -65,7 +75,6 @@ const Editor = ({ onSubmit }) => {
     const onSubmitButton = () => {
         onSubmit(input);
     };
-
     return (
         <div className="Editor">
             <section className="date_section">
